@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Lab 02_03</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1px;
+            width: 780px;
+        }
+
+        .menu li {
+            background-color: rgb(255, 112, 16);
+            border: 0px;
+            border-radius: 5px;
+            padding: 10px 20px;
+            
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            color: yellow;
+        }
+        .menu1{
+            list-style: none; /*loại bỏ ký hiệu gạch đầu dòng*/
+            padding: 0px;
+            margin: 0px;
+            width: 200px;
+            
+        }
+        .menu1 li {
+            text-align: center;
+            padding: 15px 0;/* Khoảng cách bên trong mục */
+            background-color: rgb(182, 177, 177);/* Màu nền từng mục */
+            border-radius: 5px;
+            border-bottom: 2px solid white;/* khoảng cách giưuax các menu */
+        }
+        .menu1 li a{
+            text-decoration: none;
+            color: yellow;
+            font-weight: bold;
+        }
+        .menu1 li a :first-child{
+            background-color: #978fa3; /* Màu đặc biệt cho mục đầu tiên */
+        }
+        .menu li a:hover {
+            background-color: #a9a9a9; /* Đổi màu nền khi rê chuột */
+            cursor: pointer; /* Thay đổi con trỏ chuột */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h2>Bài4 lab02</h2>
+    <ul class="menu">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Tin tức</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Khóa học</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Đăng ký</a></li>
+        <li><a href="#">Đăng nhập</a></li>
+    </ul>
+    <hr>
+    <h2>Bài 5</h2>
+    <ul class="menu1">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Tin tức</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Khóa học</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Đăng ký</a></li>
+        <li><a href="#">Đăng nhập</a></li>
+    </ul>
+    <hr>
+    <h3>Bài 6</h3>
+    <caption><b>Đăng ký thông tin người sử dụng</b></caption>
+    <table border="0"cellspacing="4" padding="" witdh="800">
+        <tbody>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td>
+                    <input type="text" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    <input type="text" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập lại mật khẩu</td>
+                <td>
+                    <input type="text" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <input type="radio" name="gender" id="Nam">
+                    <label for="Nam">Nam</label>
+                    <input type="radio" name="gender" id="Nu">
+                    <label for="Nu">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Độ tuổi</td>
+                <td>
+                    <input type="radio" name="old" id="D_13_old">
+                    <label for="D_13_old">Dưới 13 tuổi</label>
+                    <input type="radio" name="old" id="13_17">
+                    <label for="13_17">Từ 13-17 tuổi</label>
+                    <input type="radio" name="old" id="18_25">
+                    <label for="18_25">Từ 18 đến 25 tuổi</label>
+                    <input type="radio" name="old" id="Tren25">
+                    <label for="Tren25">Trên 25 tuổi</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Sở thích của bạn </td>
+                <td>
+                    <input type="checkbox" name="like" id="amnhac">
+                    <label for="amnhac">Âm nhạc</label>
+                    <input type="checkbox" name="like" id="game">
+                    <label for="game">Game</label>
+                    <input type="checkbox" name="like" id="thethao">
+                    <label for="thethao">Thể thao</label>
+                    <input type="checkbox" name="like" id="dulich">
+                    <label for="dulich">Du lịch</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select name="job" id="job">
+                        <option value="cntt">Công nghệ thông tin</option>
+                        <option value="qttd">Quản trị kinh doanh</option>
+                        <option value="bds">Bất động sản</option>
+                        <option value="nna">Ngôn ngữ Anh</option>
+                        <option value="qtks">Quản trị khách sạn</option>
+                    </select>
+            </tr>
+            <tr>
+                <td>Mô tả bản thân</td>
+                <td>
+                    <textarea name="note" id="note" placeholder="mô tả gì đó về bản thân của bạn" cols="60" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center">
+                    <input size="30" type="button" name="dangky" id="dangky" value="Đăng ký">
+                    <input size="30" type="reset" name="reset" id="reset" value="Làm lại">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+</body>
+
+</html>
