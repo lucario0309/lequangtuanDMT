@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thêm Mới Mã Agent</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .form-group input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Thêm Mới Mã Agent</h2>
+    <form id="agentForm">
+      <div class="form-group">
+        <label for="agentCode">Mã Agent</label>
+        <input type="text" id="agentCode" placeholder="Nhập mã Agent">
+        <div id="codeError" class="error-message"></div>
+      </div>
+      <div class="form-group">
+        <label for="agentName">Tên Agent</label>
+        <input type="text" id="agentName" placeholder="Nhập tên Agent">
+        <div id="nameError" class="error-message"></div>
+      </div>
+      <button type="submit" class="btn">Thêm Mới</button>
+    </form>
+    <div id="successMessage" class="success-message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('agentForm');
+    const agentCode = document.getElementById('agentCode');
+    const agentName = document.getElementById('agentName');
+    const codeError = document.getElementById('codeError');
+    const nameError = document.getElementById('nameError');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Reset error messages
+      codeError.textContent = '';
+      nameError.textContent = '';
+      successMessage.textContent = '';
+
+      let isValid = true;
+
+      // Validate Agent Code
+      const agentCodeValue = agentCode.value.trim();
+      const specialCharRegex = /[^a-zA-Z0-9]/; // Chỉ cho phép chữ và số
+
+      if (agentCodeValue === '') {
+        codeError.textContent = 'Mã Agent không được để trống.';
+        isValid = false;
+      } else if (specialCharRegex.test(agentCodeValue)) {
+        codeError.textContent = 'Mã Agent không được chứa ký tự đặc biệt.';
+        isValid = false;
+      }
+
+      // Validate Agent Name
+      if (agentName.value.trim() === '') {
+        nameError.textContent = 'Tên Agent không được để trống.';
+        isValid = false;
+      }
+
+      // Show success message if valid
+      if (isValid) {
+        successMessage.textContent = 'Thêm mới thành công!';
+        form.reset(); // Reset form fields
+      }
+    });
+  </script>
+</body>
+</html>
