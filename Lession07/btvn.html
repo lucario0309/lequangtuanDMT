@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập về nhà</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data" onsubmit="return checkForm()">
+        <div>
+            <label for="username">Username </label>
+            <input type="text" name="username" id="username" class="username">
+            <p class="error error-user">Username không được để trống</p>
+            <p class="error error-email-user">Username không đúng định dạng (email)</p>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="password">
+            <p class="error error-pass">Password không đúng định dạng (tối thiểu 8 ký tự, gồm chữ hoa, chữ thường và số)</p>
+        </div>
+        <div class="form-control" onclick="showPass()">
+            <input type="checkbox" id="showPass" class="showPass">
+            <label for="showPass">Hiển thị mật khẩu</label>
+        </div>
+        <div class="form-control">
+            <input type="submit" name="submit" id="submit">
+        </div>
+    </form>
+
+    <script>
+        const regxEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const regxPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+        function showPass() {
+            var checkshowPass = document.getElementsByClassName('showPass')[0];
+            var passwordField = document.getElementsByClassName('password')[0];
+            if (checkshowPass.checked) {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+
+        function checkForm() {
+            const username = document.querySelector('.username').value.trim();
+            const password = document.querySelector('.password').value.trim();
+
+            let isValid = true;
+
+            // Kiểm tra username
+            if (username === "") {
+                document.querySelector('.error-user').style.display = 'block';
+                isValid = false;
+            } else {
+                document.querySelector('.error-user').style.display = 'none';
+                if (!regxEmail.test(username)) {
+                    document.querySelector('.error-email-user').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.querySelector('.error-email-user').style.display = 'none';
+                }
+            }
+
+            // Kiểm tra password
+            if (regxPassword.test(password)) {
+                document.querySelector('.error-pass').style.display = 'none';
+            } else {
+                document.querySelector('.error-pass').style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

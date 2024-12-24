@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        #box-1{
+            height: 300px;
+            width: 300px;
+            border: solid #000 3px;
+            background: pink;
+            position: relative;
+        }
+        #box-2{
+            height: 250px;
+            width: 250px;
+            border: solid #44bcfc 3px;
+            /* position: absolute; sẽ lấy khối cha theo khối có 
+            position là relative hoặc absolute */
+            position:absolute;
+            top:30px;
+            left: 30px;
+            background: rgb(155, 54, 71);
+        }
+        #box-3{
+            height: 150px;
+            width: 150px;
+            border: solid #43ae95 3px;
+            position:absolute;
+            top:40px;
+            left: 40px;
+            background: rgb(55, 131, 206);
+        }
+        #box-4{
+            height: 100px;
+            width: 100px;
+            background: #000;
+            position: fixed;
+            top: 50%;
+            left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box-1">
+        <div id="box-2">
+            <div id="box-3">
+                <div id="box-4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

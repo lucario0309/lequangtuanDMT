@@ -1,0 +1,100 @@
+1.Tương tác với thẻ HTML
+    - inline
+    - internal
+    - external
+
+2. Khai báo biên, object, arrg[]
+    - var ten_biến;
+
+3. Cấu trúc điều khiển
+    3.1
+    - if
+    - if - else
+    - if - else - if
+    - if lồng nhau
+    * sử dụng
+        if(mệnh đề điều kiện)
+        {
+            các_khối_lệnh;
+            else if(mệnh_đề_điều_kiện_2)
+            {
+                các khối lệnh;
+            }
+        }
+        else
+        {
+            các khối lệnh;
+        }
+        
+    3.2 Switch case
+    - switch(biến_tham_chiếu)
+    {
+        case 1 giá_trị:
+            các khối lệnh;
+        breack;
+        case 2 giá_trị:
+            các khối lệnh;
+        breack;
+        case 3 giá_trị:
+            các khối lệnh;
+        breack;
+        ...
+        default:
+            các khối lệnh;
+        break;
+    }
+4. Vòng lặp
+    4.1.For
+        for(khai báo giá trị khởi đầu; điều kiện; biến tăng)
+        {   
+            các khối lệnh;
+        }
+    4.2 do-while
+        do
+        {
+            các khối lệnh;
+        }
+        while(mệnh đề điều kiện)
+        {
+            các khối lệnh;
+        }
+    4.3 while
+        while(mệnh_đề_điều_kiện)
+        {
+            các_khối_lệnh;
+        }
+    4.4 for-in
+        for(var tên_biến_bất_kỳ in tên_mảng/object)
+        {
+            các_khối_lệnh;
+        }
+5. Hàm - Function
+    -- Khai báo hàm--
+    Function tên_hàm(các biến_tham_chiếu(có thể có nhiều))
+    {
+        các_khối_lệnh;
+    }
+    -- Sử dụng --
+    tên_hàm(truyền_tham_số_1,...);
+6. Mảng-Chuỗi
+    - Hàm xử lý Mảng: 
+        +sort();
+        +push();
+        +shift();
+        +value();
+        ...
+    - Hàm xử lý Chuỗi:
+        + concat();
+        + replace();
+        + split();//các chuỗi//
+        + subtring();
+        ...
+7. DOM/Jquery
+
+
+
+
+
+
+
+

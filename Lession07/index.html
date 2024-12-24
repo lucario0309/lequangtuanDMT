@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="username"> Username</label>
+            <input type="text" name="username" id="username" onchange="getValueUsername()">
+        </div>
+        <div>
+            <label for="password"> Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="form-control">
+            <input type="checkbox" name="showPass" id="showPass">
+            <label for="showPass">Hiển thị mật khẩu</label>
+        </div>
+        <div class="form-control">
+            <input type="submit" name="submit" id="s">
+        </div>
+    </form>
+
+    <script>
+        //Thông qua thuộc tính Id
+        function getValueUsername() {
+            //Thông qua thuộc tính Id
+            var username = document.getElementById('username').value;
+            console.log(username);
+            //Thông qua thẻ HTML
+            var input = document.getElementsByTagName('input');
+            console.log(input[0].value);
+            //Thông qua class
+            var class1 = document.getElementsByClassName('form-control');
+            console.log(class1);
+            //Thông qua các cú pháp CSS Selector
+            var querySelector = document.querySelectorAll('.form-control input');
+            console.log(querySelector);
+        }
+
+    </script>
+
+</body>
+
+</html>

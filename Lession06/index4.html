@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu lệnh rẽ nhánh- if_else</title>
+</head>
+<body>
+    <script>
+        //Câu lệnh rẽ nhánh
+        //if
+        // syntax : if(mệnh đề thực hiện){
+        // }
+        if(5>3){
+            document.writeln("5 > 3");
+        }
+        //  if else 
+        // syntax: if(mệnh đề thực hiện)
+        // {
+            // else{}
+        if(5<3)
+        {
+            document.writeln("5 < 3");
+        }      
+        else
+        {
+            document.writeln("5 > 3");
+        }  
+
+        // if else if 
+        if(5>3)
+        {
+            document.writeln("5 > 3");
+        }
+        else if(5 == 3)
+        {
+            document.writeln("5 = 3");
+            
+        }
+        else{
+            document.writeln("5<3");
+        }
+        // if lồng nhau 
+        if(5>3)
+        {
+            document.writeln("5 > 3");
+            if(4>3)
+            {
+                document.writeln(" 4 > 3");
+            }
+        }
+        //switch_case 
+        //syntax: 
+        // switch(biến điêu kiện)
+        //  case biến kiểm tra:
+        document.writeln("br/> Switch case br/>");
+        
+        var ngay=1;
+        switch (ngay) {
+            case 1:
+                document.writeln("CN");
+                break;
+            case 2:
+                document.writeln("Thứ 2 <br/>");
+                break;
+            case 3:
+                document.writeln("Thứ 3");
+                break;
+            case 4:
+                document.writeln("Thứ 4");
+                break;
+            case 5:
+                document.writeln("Thú 5");
+                break;
+            case 6:
+                document.writeln("Thứ 6");
+                break;
+            case 7:
+                document.writeln("Thứ 7");
+                break;
+        
+            default:
+                document.writeln("Không phải ngày trong tuần");
+                break;
+        }
+    </script>
+</body>
+</html>

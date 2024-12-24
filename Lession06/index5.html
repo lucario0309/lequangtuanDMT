@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng lặp for</title>
+</head>
+
+<body>
+    <script>
+        //Vòng lặp for
+        for (var i = 0; i < 10; i++) 
+        {
+            document.writeln(i+ "<br/>");
+    
+        }
+        //vòng lặp do-while -- thực thi ít nhất 1 lần 
+        var dem = 3;
+        do{
+            document.writeln(dem+"<br/>");
+            dem++;
+        }
+        while(dem<3);
+        //Vòng lặp while
+        document.writeln("while");
+        //Array 
+        var  arr=["dev","vungocphan", 78, true,false];
+        //object
+        var obj =
+        {
+            name: "devmaster",
+            adress: "25 Vũ Ngọc Phan",
+            age: "18",
+        }
+        //for in hiển thị giá trị 
+        for(var i in arr )
+        {
+            document.writeln(arr[i]+ "<br/>");
+            
+        }
+        document.writel(obj.name +"<br/>");
+        for(var i in obj )
+        {
+            document.writeln(obj[i]+ "<br/>");
+            
+        }
+        array.forEach(element => {
+            
+        });
+    </script>
+</body>
+
+</html>

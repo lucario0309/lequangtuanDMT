@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" enctype="multipart/form-data" method="post">
+        <div>
+            <label for="username"> Username</label>
+            <input type="text" name="username" id="username" onblur="usernameBlank()">
+            <p class="error" id="error-user">
+                Username không được để trống
+            </p>
+            <p class="error" id="error-email-user">
+                Username không đúng định dạng
+            </p>
+        </div>
+        <div>
+            <label for="password"> Password</label>
+            <input type="password" name="password" id="password" onblur="passwordBlank()">
+            <p class="error" id="error-pass">
+                Password không được để trống
+            </p>
+        </div>
+        <div class="form-control" onclick="showPass()">
+            <input type="checkbox" name="showPass" id="showPass">
+            <label for="showPass">Hiển thị mật khẩu</label>
+        </div>
+        <div class="form-control">
+            <input type="submit" name="submit" id="submit">
+        </div>
+    </form>
+
+    <script>
+        var regxEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+        function usernameBlank() {
+            var checkBlank = document.getElementById('username').value;
+            if (checkBlank == "") {
+                document.getElementById('error-user').style.display = 'block';
+            }
+            else {
+                document.getElementById('error-user').style.display = 'none';
+                if (regxEmail.test(checkBlank)) 
+                {
+                    document.getElementById('error-email-user').style.display = 'none';
+                }
+                else
+                {
+                    document.getElementById('error-email-user').style.display = 'block';
+                }
+            }
+        }
+        function passwordBlank() {
+            var checkBlank = document.getElementById('password').value;
+            if (checkBlank == "") {
+                document.getElementById('error-pass').style.display = 'block';
+            }
+            else {
+                document.getElementById('error-pass').style.display = 'none';
+            }
+        }
+        function showPass() {
+            var checkShowPass = document.getElementById('showPass');
+            console.log(checkShowPass.checked);
+            if (checkShowPass.checked) {
+                document.getElementById('password').type = "text";
+            }
+            else {
+                document.getElementById('password').type = "password";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

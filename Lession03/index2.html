@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các bộ chọn CSS</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+        /* Tag - có thể có các id, class, tên thẻ, tên thuộc tính 
+            -chọn tất cả các thẻ cùng loại
+        */
+        /* tag01 tag02: tất cả thẻ p nằm trong div đều nhận
+         được thuộc tính css */
+        div p{
+            color: rgb(60, 13, 179);
+        }
+        /* tag01,tag02: Tất cả các thẻ tag02 nằm trong
+         tag 01 thì đều nhận được thuộc tính CSS */
+         /* h2{
+            color:red;
+         }
+         h3{
+            color:red;
+         } */
+          h2,h3{
+            color: red;
+          }
+        /* Tag01+Tag02: tất cả thẻ Tag02 nằm liền sau Tag01 */
+        h2+p{
+            background-color:aqua ;
+        }
+        /* Tag01>tag02: */
+        section>p{
+            background-color: brown;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Tag01 Tag02 -->
+    <div>
+        <p>
+            Tag01 Tag02(div p)
+        </p>
+        <p>
+            Tag01 Tag02(div p)
+        </p>
+    </div>
+    <!-- Tag01,Tag02 -->
+    <div>
+        <h2>Tag01,Tag02</h2>
+        <h3>Tag01,Tag02</h3>
+    </div>
+    <!-- Tag01+Tag02 -->
+    <div>
+        <h2>Tag01+Tag02</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nobis aperiam ad sint! Laborum provident maiores cupiditate quasi deleniti sequi. Asperiores facilis quia 
+            mollitia nam placeat perspiciatis consequuntur officiis quasi modi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nobis aperiam ad sint! Laborum provident maiores cupiditate quasi deleniti sequi. Asperiores facilis quia 
+            mollitia nam placeat perspiciatis consequuntur officiis quasi modi.</p>
+    </div>
+    <!-- Tag01>Tag02 -->
+     <section>
+        <h4>Tag01>Tag02</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Iure, sit. Sapiente,error nisi fugit, ratione nulla vel
+             totam unde libero veritatis labore nostrum, nihil corrupti laborum a molestiae suscipit! Ipsum!</p>
+     </section>
+</body>
+</html>

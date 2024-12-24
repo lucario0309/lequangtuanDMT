@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mức độ ưu tiên trong CSS</title>
+    <style>
+        /* #red{
+            color: red;
+        }
+        .cl-blue{
+            color: blue !important;
+        } */
+        p{
+            color: yellow !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Lưu ý: 
+        1. CSS sẽ lấy từ dưới lên trên hay viết sau sẽ được CSS
+        2. important -> tương tác qua id -> tương tác qua thuộc tính -> 
+        tương tác qua class -> tương tác qua tên thẻ
+        3. Chỏ càng gần thì sẽ càng được ưu tiên.
+    -->
+    <section>
+        <div>
+            <p id="red" class="cl-blue">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis veritatis officiis, dicta dolor mollitia minus molestias adipisci quidem assumenda?
+                Explicabo aliquid fugiat ipsam deleniti minima ut facilis excepturi, omnis aspernatur.</p>
+        </div>
+    </section>
+</body>
+
+</html>
