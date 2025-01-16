@@ -17,19 +17,22 @@
     <form action="" enctype="multipart/form-data" method="post">
         <div>
             <label for="username"> Username</label>
-            <input type="text" name="username" id="username" onblur="usernameBlank()">
-            <p class="error" id="error-user">
+            <input type="text" name="username" id="username">
+            <p class="error error-blank">
                 Username không được để trống
             </p>
-            <p class="error" id="error-email-user">
+            <p class="error error-format">
                 Username không đúng định dạng
             </p>
         </div>
         <div>
             <label for="password"> Password</label>
-            <input type="password" name="password" id="password" onblur="passwordBlank()">
-            <p class="error" id="error-pass">
+            <input type="password" name="password" id="password">
+            <p class="error error-blank">
                 Password không được để trống
+            </p>
+            <p class="error error-format">
+                Password không đúng định dạng
             </p>
         </div>
         <div class="form-control" onclick="showPass()">
@@ -40,49 +43,56 @@
             <input type="submit" name="submit" id="submit">
         </div>
     </form>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
     <script>
-        var regxEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-
-        function usernameBlank() {
-            var checkBlank = document.getElementById('username').value;
-            if (checkBlank == "") {
-                document.getElementById('error-user').style.display = 'block';
+        regx = 
+        {
+            username: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+            password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[£$%&#])[a-zA-Z\d£$%&]{8,}$/
+        }
+        $("input").on("blur", function ()
+        {
+            let id = $(this).get(0).id;
+            if(id == "showPass")
+            {
+                return;
             }
-            else {
-                document.getElementById('error-user').style.display = 'none';
-                if (regxEmail.test(checkBlank)) 
+            console.log($(this).val());
+            if ($(this).val() == "")
+            {
+                $(this).siblings(".error-blank").show();
+            }
+            else
+            {
+                $(this).siblings(".error-blank").hide();
+                
+                // console.log(id);
+                if(regx[id].test($(this).val()))
                 {
-                    document.getElementById('error-email-user').style.display = 'none';
+                    $(this).siblings(".error-format").hide();
                 }
                 else
                 {
-                    document.getElementById('error-email-user').style.display = 'block';
+                    $(this).siblings(".error-format").show();
                 }
             }
-        }
-        function passwordBlank() {
-            var checkBlank = document.getElementById('password').value;
-            if (checkBlank == "") {
-                document.getElementById('error-pass').style.display = 'block';
+            
+        });
+        $(":checkbox").on("change", function ()
+        {
+            if($("#showPass").is(":checked"))
+            {
+                $("#password").attr("type", "text");
             }
-            else {
-                document.getElementById('error-pass').style.display = 'none';
+            else
+            {
+                $("#password").attr("type", "password");
             }
-        }
-        function showPass() {
-            var checkShowPass = document.getElementById('showPass');
-            console.log(checkShowPass.checked);
-            if (checkShowPass.checked) {
-                document.getElementById('password').type = "text";
-            }
-            else {
-                document.getElementById('password').type = "password";
-            }
-        }
-
+        });
     </script>
-
 </body>
 
 </html>

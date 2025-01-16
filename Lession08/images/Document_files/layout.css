@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url(../fonts/Gotham-Medium.otf);
+}
+
+@font-face {
+    font-family: 'Gotham-Thin';
+    src: url(../fonts/Gotham-Thin.otf);
+}
+
+@font-face {
+    font-family: 'Gotham-Ultra';
+    src: url(../fonts/Gotham-Ultra.otf);
+}
+
+* {
+    font-family: 'Gotham-Medium';
+
+}
+
+header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+section{
+    background-color: #f9f8f8;
+}
+
+.header-logo {
+    margin-left: 0;
+}
+
+.header-search {
+    margin-left: 3.375rem;
+}
+
+.header-icon {
+    margin-left: 1rem;
+}
+
+.header-user {
+    margin-left: 4rem;
+}
+
+.navbar {
+    max-width: 21.375rem;
+}
+
+/* .bg-1 {
+    background-color: #fefaef;
+} */
+
+.bg-2 {
+    background-color: #df8f20;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: #fefaef;
+}
+
+/* .border-bottom{
+    border-color: #df8f20;
+} */
+
+.form-control {
+    border: 1px solid #fff;
+    /* Đặt màu và độ dày của border */
+    border-radius: 25px;
+    /* Bo tròn các góc */
+    padding: 10px 20px;
+    /* Tạo khoảng cách bên trong */
+    font-size: 16px;
+    /* Kích thước chữ */
+    width: 15rem;
+    /* Đặt chiều rộng của ô input */
+    outline: none;
+    /* Tắt viền mặc định khi ô input được chọn */
+    border-color: #df8f20;
+    height: 2rem;
+}
+.input-group{
+    max-width: 21.375rem;
+}
+
+#banner {
+    background-image: url(../images/img/header.jpg);
+    background-repeat: no-repeat;
+    
+}
+
+.search-icon {
+    background-color: #df8f20;
+    border: 1px solid #fff;
+    /* Đặt màu và độ dày của border */
+    border-radius: 25px;
+    /* Bo tròn các góc */
+    padding: 10px 15px;
+    /* Tạo khoảng cách bên trong */
+    font-size: 16px;
+    /* Kích thước chữ */
+    border-color: #df8f20;
+    height: 2rem;
+    display: flex;
+    /* width:20px; */
+    align-items: center;
+
+
+}
+
+/* Thay đổi màu văn bản của các liên kết khi hover */
+.nav-link:hover {
+    color: #df8f20;
+    /* Thay đổi màu văn bản của liên kết khi hover */
+    transition: color 0.3s ease;
+    /* Hiệu ứng chuyển màu mượt mà */
+}
+
+/* Thay đổi độ sáng của hình ảnh khi hover */
+.nav-item span img {
+    fill: brightness(0.8) sepia(1) hue-rotate(180deg);
+    transition: filter 0.3s ease;
+    /* Hiệu ứng chuyển mượt mà */
+}
+
+.nav-item:hover span img {
+    filter: brightness(0.8);
+    /* Làm tối hình ảnh khi hover */
+}
+.img-small{
+    width: 37rem;
+}
+
+.img-size {
+    margin-top: 0.8rem;
+    margin-right: 0.8rem;
+    width: 100px;
+    /* Set width to 300 pixels */
+
+    height: 55px;
+    /* Set height to 200 pixels */
+}
+.product-information{
+    margin-left: 5rem;
+}
+.product-buy{
+    margin-top: 1rem;
+}
+.btn-buy-now{
+    display:inline-block;
+    padding: 10px 20px;/*khoảng cách bên trong nút */
+    background-color: #df8f20;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;/* xoá viền mặc định thẻ button */
+    border-radius: 5px; /* bo góc nút */
+    cursor: pointer; /* hiển thị con trỏ khi rẻ chuột */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+    /* transition: background-color 0.3; */
+}
+.input-quantity{
+    display:inline-block;
+    padding: 10px 20px;/*khoảng cách bên trong nút */
+    /* background-color: #df8f20; */
+    color: #000000;
+    border: 1px solid #b7b4b4;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px; /* bo góc nút */
+    cursor: pointer; /* hiển thị con trỏ khi rẻ chuột */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+    /* transition: background-color 0.3; */
+    margin-right: 2rem;
+}
+.section-mid-buy{
+    border-radius: 5px;
+    border: 1px solid#b7b4b4;
+}
+.product-name-date{
+    border: 2px #eda531;
+    border-style: dashed;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <style>
+        section {
+            width: 1000px;
+            margin: auto;
+        }
+
+        section>div,
+        #cart-left .product-cart {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #cart-left .product-cart {
+            width: 700px;
+        }
+
+        .product-quatity .btn-quatity {
+            border: 1px solid #000;
+            padding: 0.5rem 0.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>Giỏ hàng</h2>
+        <div>
+            <div id="cart-left">
+                <!-- <div class="product-cart">
+                    <div class="product-img">
+                        <img src="img/img1.png" alt="kim-tien">
+                    </div>
+                    <div class="product-dec">
+                        <h3>Cây kim tiền</h3>
+                        <div class="product-quatity">
+                            <span class="btn-quatity btn-pre">-</span>
+                            <span class="">1</span>
+                            <span class="btn-quatity btn-plus">+</span>
+                        </div>
+                        <div class="product-price">
+                            Giá <span>250000</span>VND
+                        </div>
+                        <div class="product-total">
+                            Thành tiền <span>250000</span>VND
+                        </div>
+                    </div>
+                    <div class="product-button">
+                        <button class="product-delete">Xoá</button>
+                        <button class="product-update">Update</button>
+                    </div>
+                </div> -->
+            </div>
+            <div id="cart-right">
+                <h3>Tóm tắt đơn hàng</h3>
+                <p>
+                    Tổng thành tiền: <Span>250000</Span>VND
+                </p>
+                <div>
+                    <button><a href="#">Đặt hàng ngay</a></button>
+                    <button><a href="#">Tiếp tục mua hàng</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var listCart = [
+            {
+                id: "SP01",
+                title: "Cây kim tiền 1",
+                img: "img/img1.png",
+                price: 250000,
+                quatity: 1,
+                total: 1 * 250000
+            },
+            {
+                id: "SP02",
+                title: "Cây kim tiền 2",
+                img: "img/img1.png",
+                price: 270000,
+                quatity: 3,
+                total: 1 * 270000
+            },
+            {
+                id: "SP03",
+                title: "Cây kim tiền 3",
+                img: "img/img1.png",
+                price: 300000,
+                quatity: 1,
+                total: 1 * 300000
+            }
+        ]
+        function renderCart(cart) {
+            return ` <div class="product-cart">
+                    <div class="product-img">
+                        <img src="${cart.img}" alt="${cart.title}">
+                    </div>
+                    <div class="product-dec">
+                        <h3>${cart.title}</h3>
+                        <div class="product-quatity">
+                            <span class="btn-quatity btn-pre" onclick ="ProductPre('${cart.id}')">-</span>
+                            <span class="quatity">${cart.quatity}</span>
+                            <span class="btn-quatity btn-plus" onclick="ProductPlus('${cart.id}')">+</span>
+                        </div>
+                        <div class="product-price">
+                            Giá <span>${cart.price}</span>VND
+                        </div>
+                        <div class="product-total">
+                            Thành tiền <span>${cart.total}</span>VND
+                        </div>
+                    </div>
+                    <div class="product-button">
+                        <button class="product-delete" onclick="ProductDelete('${cart.id}')">Xoá</button>
+                        <button class="product-update">Update</button>
+                    </div>
+                </div>`
+        }
+        function renderListCart(carts) {
+            for (let i = 0; i < carts.length; i++) {
+                $('#cart-left').append(renderCart(carts[i]))
+            }
+            TotalCart();
+        }
+        renderListCart(listCart);
+
+        function ProductPre(id) {
+            for (let i = 0; i <listCart.length; i++) {
+                if (listCart[i].id == id) {
+                    listCart[i].quatity--;
+                    listCart[i].total = listCart[i].quatity * listCart[i].price;
+                }
+            }
+            $('#cart-left').html('');
+            renderListCart(listCart);
+        }
+        function ProductPlus(id){
+            for (let i = 0; i <listCart.length; i++) {
+                if (listCart[i].id == id) {
+                    listCart[i].quatity++;
+                    listCart[i].total = listCart[i].quatity * listCart[i].price;
+                }
+            }
+            $('#cart-left').html('');
+            renderListCart(listCart);
+        }
+        function TotalCart()
+        {
+            let total=0;
+            for(let i=0; i<listCart.length; i++)
+            {
+                total+=listCart[i].total;
+            }
+            $('#cart-right>p>span').html(total);
+        }
+
+        function ProductDelete(id){
+            for (let i = 0; i <listCart.length; i++) {
+                if (listCart[i].id == id) 
+                {
+                        listCart.splice(i,1);
+                        $('#cart-left').html('');
+                        renderListCart(listCart);
+                        return;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
